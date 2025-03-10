@@ -24,11 +24,20 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-
-
-
-
-
-
-
-
+const validateCred = arr => { 
+    /* 
+        This function takes an array of numbers and 
+        uses the Luhn algorithm to determine whats a valid 
+        credit card number. 
+    */
+    const total = arr.reduceRight((sum, currentVal, index, orginalArr) => { // reduceRight is used to start from the right side of the array
+        if ((orginalArr.length - 1 - index) % 2 === 1){ // check if the current index is odd
+            currentVal *= 2; // double the value
+            if (currentVal > 9) { // if the value is greater than 9, subtract 9
+                currentVal -= 9;
+            };
+        };
+        return sum += currentVal; // add the current value to the sum
+    }, 0);
+    return total % 10 === 0; // return true if the total is divisible by 10
+};
