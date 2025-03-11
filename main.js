@@ -41,3 +41,8 @@ const validateCred = arr => {
     }, 0);
     return total % 10 === 0; // return true if the total is divisible by 10
 };
+
+const findInvalidCards = arr => { // This function filters the batch using the validateCred(), and returns the invalid cards.
+    const invalidCards = arr.filter(card => !validateCred(card));
+    return invalidCards;
+};
