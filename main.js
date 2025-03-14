@@ -46,3 +46,14 @@ const findInvalidCards = arr => { // This function filters the batch using the v
     const invalidCards = arr.filter(card => !validateCred(card));
     return invalidCards;
 };
+
+const idInvalidCardCompanies = arr => {
+    const invalidCards = findInvalidCards(arr); // Collects invalid cards
+    let needsContact = []; // Will add to if company needs to be contacted. 
+
+    // Use switch cases and array.prototype.idexOf() also read the Codecademy Hint.
+
+    
+};
+
+console.log(idInvalidCardCompanies(batch));
