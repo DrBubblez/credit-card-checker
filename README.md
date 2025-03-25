@@ -10,13 +10,14 @@ A Codecademy project that validates credit card numbers using the Luhn algorithm
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository
   
-2. Navigate to the project directory:
+2. Navigate to the project directory
 
 ## Usage
 
 1. Log what function you want to use
+
 2. Run the program:
 
     ```
