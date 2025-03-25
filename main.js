@@ -50,10 +50,35 @@ const findInvalidCards = arr => { // This function filters the batch using the v
 const idInvalidCardCompanies = arr => {
     const invalidCards = findInvalidCards(arr); // Collects invalid cards
     let needsContact = []; // Will add to if company needs to be contacted. 
-
-    // Use switch cases and array.prototype.idexOf() also read the Codecademy Hint.
-
     
+    invalidCards.forEach((card) => { // This will check the first digit and see which company it belongs to.
+       switch(card[0]) {
+        case 3: // Amex
+            if (needsContact.indexOf('Amex') === -1) {
+                needsContact.push('Amex'); 
+            }
+            break;
+        case 4: // Visa
+            if (needsContact.indexOf('Visa') === -1) {
+                needsContact.push('Visa');
+            }
+            break;
+        case 5: // Master Card
+            if (needsContact.indexOf('Master Card') === -1) {
+                needsContact.push('Master Card');
+            }
+            break;
+        case 6: // Discover
+            if (needsContact.indexOf('Discover') === -1) {
+                needsContact.push('Discover');
+            }
+            break;
+        default: // If the company is not found
+            console.log('Company not found');
+            break;
+       };
+    });
+    return needsContact;
 };
 
 console.log(idInvalidCardCompanies(batch));
